@@ -10,7 +10,7 @@ class Account::TasksController < ApplicationController
     @task = Task.new(task_params)
     @task.project_id = @project.id
     @task.save
-    redirect_to account_projects_path
+    redirect_to account_project_path(@task.project_id)
   end
 
   def edit
@@ -20,13 +20,13 @@ class Account::TasksController < ApplicationController
   def update
     @task = Task.find_by(id: params[:id])
     @task.update(task_params)
-    redirect_to account_projects_path
+    redirect_to account_project_path(@task.project_id)
   end
 
   def destroy
     @task = Task.find_by(id: params[:id])
     @task.destroy
-    redirect_to account_projects_path
+    redirect_to account_project_path(@task.project_id)
   end
 
   private

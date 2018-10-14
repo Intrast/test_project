@@ -1,8 +1,9 @@
-<%= form_for [:account, :project ,@task] do |form| %>
+<%= form_for [:account, @project ,@task] do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name%>
 <br>
   <%= form.label :text %>
-  <%= form.text_area :text, size: '50x10' %>
+  <br>
+  <%= form.text_area :text, size: '50x5' %>
   <%= form.submit 'add' %>
 <% end %>
