@@ -1,1 +1,11 @@
-<%= link_to 'add task', new_account_task_path %>
+<%= link_to 'add task', new_account_project_task_path(params[:id]) %>
+
+<% @tasks.each do |task| %>
+
+    <br>
+    <%= task.name %>
+    <br>
+    <%= task.text %>
+    <br>
+
+<% end %>

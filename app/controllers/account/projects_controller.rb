@@ -25,7 +25,8 @@ class Account::ProjectsController < ApplicationController
   end
 
   def show
-    @tasks = Task.all
+    @tasks = Task.where(project_id: params[:id])
+    @project = Project.find_by(id: params[:id])
   end
 
   def destroy
