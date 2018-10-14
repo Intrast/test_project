@@ -1,0 +1,6 @@
+<%= form_for [:account, @project] do |form| %>
+  <%= form.label :name %>
+<br>
+  <%= form.text_field :name %>
+  <%= form.submit 'edit'%>
+<% end %>

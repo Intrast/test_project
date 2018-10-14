@@ -1,0 +1,8 @@
+<%= link_to 'new project', new_account_project_path %>
+<br>
+<% @projects.each do |project| %>
+<%= link_to "#{project.name}", account_project_path(project)%>
+<%= link_to 'edit', edit_account_project_path(project)%>
+<%= link_to 'delete', account_project_path(project), :method => :delete, data: {confirm: "You sure?"}%>
+<br>
+<% end %>

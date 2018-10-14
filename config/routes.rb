@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :account do
+    resources :dashboard
+    resources :projects
+    resources :tasks
+  end
+  get 'hello_world', to: 'hello_world#index'
+  get 'index', to: 'dashboard#index'
 end
