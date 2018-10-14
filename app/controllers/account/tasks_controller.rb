@@ -14,7 +14,19 @@ class Account::TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find_by(id: params[:id])
+  end
 
+  def update
+    @task = Task.find_by(id: params[:id])
+    @task.update(task_params)
+    redirect_to account_projects_path
+  end
+
+  def destroy
+    @task = Task.find_by(id: params[:id])
+    @task.destroy
+    redirect_to account_projects_path
   end
 
   private

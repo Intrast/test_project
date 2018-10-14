@@ -7,5 +7,6 @@
     <br>
     <%= task.text %>
     <br>
-
+    <%= link_to 'edit', edit_account_project_task_path(task.project_id, task)%>
+    <%= link_to 'delete', account_project_task_path(task.project_id, task), :method => :delete %>
 <% end %>
